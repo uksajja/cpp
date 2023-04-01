@@ -1,0 +1,169 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "vs-rel",
+            "displayName": "Release - Visual Studio Community 2022 Release - amd64",
+            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "vs-dbg",
+            "displayName": "Debug - Visual Studio Community 2022 Release - amd64",
+            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "gcc-rel",
+            "displayName": "Release - GCC 12.1.0 x86_64-w64-mingw32",
+            "description": "Using compilers: C = C:\\mingw64\\bin\\gcc.exe, CXX = C:\\mingw64\\bin\\g++.exe",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "C:/mingw64/bin/gcc.exe",
+                "CMAKE_CXX_COMPILER": "C:/mingw64/bin/g++.exe",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "gcc-dbg",
+            "displayName": "Debug - GCC 12.1.0 x86_64-w64-mingw32",
+            "description": "Using compilers: C = C:\\mingw64\\bin\\gcc.exe, CXX = C:\\mingw64\\bin\\g++.exe",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/bin/${presetName}",
+                "CMAKE_C_COMPILER": "C:/mingw64/bin/gcc.exe",
+                "CMAKE_CXX_COMPILER": "C:/mingw64/bin/g++.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "clang-gnu-dbg",
+            "displayName": "Clang 14.0.6 x86_64-w64-windows-gnu",
+            "description": "Using compilers: C = C:\\mingw64\\bin\\clang.exe, CXX = C:\\mingw64\\bin\\clang++.exe",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "C:/mingw64/bin/clang.exe",
+                "CMAKE_CXX_COMPILER": "C:/mingw64/bin/clang++.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "clang-cl-dbg",
+            "displayName": "Clang-cl 14.0.6 x86_64-pc-windows-msvc",
+            "description": "Using compilers: C = C:\\mingw64\\bin\\clang-cl.exe, CXX = C:\\mingw64\\bin\\clang-cl.exe",
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
+                "CMAKE_C_COMPILER": "C:/mingw64/bin/clang-cl.exe",
+                "CMAKE_CXX_COMPILER": "C:/mingw64/bin/clang-cl.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "vs-rel",
+            "displayName": "Visual Studio Community 2022 Release - amd64",
+            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        },
+        {
+            "name": "vs-rel-new",
+            "displayName": "Visual Studio Community 2022 Release - amd64",
+            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        },
+        {
+            "name": "clang",
+            "displayName": "Clang 12.0.0 (GNU CLI) for MSVC 17.0.32014.148 (Visual Studio Community 2022 Release - amd64)",
+            "description": "Using compilers: C = C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe, CXX = C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
+                "CMAKE_CXX_COMPILER": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "vs-rel",
+            "description": "",
+            "displayName": "vs-rel",
+            "configurePreset": "vs-rel",
+            "configuration": "Release"
+        },
+        {
+            "name": "vs-dbg",
+            "description": "",
+            "displayName": "vs-dbg",
+            "configurePreset": "vs-dbg",
+            "configuration": "Debug"
+        },
+        {
+            "name": "gcc-rel",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "gcc-rel",
+            "configuration": "Release"
+        },
+        {
+            "name": "gcc-dbg",
+            "description": "gcc-dbg",
+            "displayName": "gcc-dbg",
+            "configurePreset": "gcc-dbg",
+            "configuration": "Debug"
+        },
+        {
+            "name": "clang-gnu-dbg",
+            "description": "",
+            "displayName": "clang-gnu-dbg",
+            "configurePreset": "clang-gnu-dbg",
+            "configuration": "Debug"
+        },
+        {
+            "name": "clang-cl-dbg",
+            "description": "",
+            "displayName": "clang-cl-dbg",
+            "configurePreset": "clang-cl-dbg",
+            "configuration": "Debug"
+        }
+    ]
+}
