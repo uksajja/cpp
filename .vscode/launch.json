@@ -20,7 +20,7 @@
             "name": "(gdb) Attach",
             "type": "cppdbg",
             "request": "attach",
-            "program": "${workspaceFolder}/build/clang-cl/Debug/cpp.2023.0.exe",
+            "program": "${workspaceFolder}/build/clang-cl/Debug/cpp-2023.0.exe",
             "MIMode": "gdb",
             "miDebuggerPath": "C:/mingw64/bin/gdb",
             "setupCommands": [
