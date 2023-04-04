@@ -8,6 +8,8 @@
 #include "inheritance.h"
 #include "operator_overloading.h"
 #include "explicit.h"
+#include "virtual_functions.h"
+
 
 int main(){ 
     test_instantiation();
@@ -17,6 +19,7 @@ int main(){
     test_inheritance_ref();
     test_operator_overloading();
     test_explicit_keyword();
+    test_virtual_functions();
 
     return 0;
 }
