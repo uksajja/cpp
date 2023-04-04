@@ -6,6 +6,7 @@
 #include "instantiation.h"
 #include "const_specifier.h"
 #include "inheritance.h"
+#include "operator_overloading.h"
 
 int main(){ 
     test_instantiation();
@@ -13,6 +14,7 @@ int main(){
     test_inheritance();
     test_inheritance_ptr();
     test_inheritance_ref();
+    test_operator_overloading();
 
     return 0;
 }
