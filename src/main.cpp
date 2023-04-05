@@ -9,6 +9,7 @@
 #include "operator_overloading.h"
 #include "explicit.h"
 #include "virtual_functions.h"
+#include "function_pointer.h"
 
 
 int main(){ 
@@ -20,6 +21,6 @@ int main(){
     test_operator_overloading();
     test_explicit_keyword();
     test_virtual_functions();
-
+    test_function_pointer();
     return 0;
 }
