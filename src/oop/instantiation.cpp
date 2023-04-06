@@ -8,7 +8,10 @@
 
 
 void test_instantiation() {
-    std::cout << "Testing Instantiation of the class objects" << std::endl;
+    std::cout << "\n------------------------------------------------------------" << std::endl;
+    std::cout << "    Test : Instantiation of the class objects               " << std::endl;
+    std::cout << "------------------------------------------------------------" << std::endl;
+    
     Employee e0 = Employee("Mark"); //INVOKES A CONSTRUCTOR WITH STRING AS THE ONLY PARAMETER
     Employee e1("John");            // Implict conversion of const char[] "John" to std::string and invoking Employee class object by using constructor receing the string
 

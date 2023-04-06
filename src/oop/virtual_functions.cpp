@@ -7,8 +7,7 @@
 #include "virtual_functions.h"
 
 void test_virtual_functions(){
-    std::cout << "\nTesting the usage of virtual functions."<<std::endl;
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "\n------------------------------------------------------------" << std::endl;
     std::cout << "    Test : Virtual Functions                                " << std::endl;
     std::cout << "------------------------------------------------------------" << std::endl;
     

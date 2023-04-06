@@ -7,7 +7,10 @@
 
 
 void test_explicit_keyword(){
-    std::cout << "\nTesting the usage of explicit keyword." << std::endl;
+    std::cout << "\n------------------------------------------------------------" << std::endl;
+    std::cout << "    Test : Usage of explicit keyword example                " << std::endl;
+    std::cout << "------------------------------------------------------------" << std::endl;
+    
     Player p1 = 100; // Allowed
     Player P2 = std::string("James"); 
     

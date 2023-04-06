@@ -5,7 +5,7 @@
 #include<string>
 
 //Project includes
-#include "sport.h"
+#include "inheritance.h"
 
 
 void PrintSportInfo(const Sport& s){
@@ -35,7 +35,7 @@ void test_inheritance(){
 }
 
 void test_inheritance_ptr(){
-    std::cout << "------------------------------------------------------------" << std::endl;
+    std::cout << "\n------------------------------------------------------------" << std::endl;
     std::cout << "    Test : Inheritance - Ptr                                " << std::endl;
     std::cout << "------------------------------------------------------------" << std::endl;
     //Instantiating an Object Pointer

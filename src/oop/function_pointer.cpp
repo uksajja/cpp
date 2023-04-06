@@ -20,7 +20,9 @@ double trapezoid(funPtr f, double a, double b, int n){
 	return(integral);
 }
 void test_function_pointer(){
-	std::cout << "\nTesting Function Pointer example." << std::endl;
+	std::cout << "\n------------------------------------------------------------" << std::endl;
+    std::cout << "    Test : Function Pointer example                         " << std::endl;
+    std::cout << "------------------------------------------------------------" << std::endl;
 	int n;
 	double a, b, integral;
 	funPtr f=square;
