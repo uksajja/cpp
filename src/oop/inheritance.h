@@ -1,11 +1,7 @@
-// Sport Class
-
-#ifndef SPORT_H_INCLUDED
-#define SPORT_H_INCLUDED
+#pragma once 
 
 #include<iostream>
 #include<string>
-
 
 class Sport{
     // private members are local to the class - Cannot be accessed by derived classes or by direct reference
@@ -99,4 +95,10 @@ class Basketball : public Sport {
         }
 };
 
-#endif //SPORT_H_INCLUDED
+void PrintSportInfo(const Sport& s);
+void PrintSportInfo(Sport* sptr);
+
+void test_inheritance();
+void test_inheritance_ptr();
+void test_inheritance_ref();
+
