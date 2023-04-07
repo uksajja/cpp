@@ -12,6 +12,7 @@
 #include "pure_virtual_functions.h"
 #include "function_pointer.h"
 #include "composition.h"
+#include "template_function.hpp"
 
 
 int main(){ 
@@ -26,6 +27,7 @@ int main(){
     test_pure_virtual_functions();
     test_function_pointer();
     test_composition();
+    test_template_function();
     
     return 0;
 }
