@@ -16,7 +16,7 @@ void test_pure_virtual_functions() {
     s1->PrintDetails();
 
 
-    Shape *s2 = new Square();
+    Shape *s2 = new Square(9);
     s2->calculate_area();
     s2->PrintDetails();
 

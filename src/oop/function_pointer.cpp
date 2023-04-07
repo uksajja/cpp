@@ -26,11 +26,9 @@ void test_function_pointer(){
 	int n;
 	double a, b, integral;
 	funPtr f=square;
-
-	std::cout << "Enter number of intervals: " << std::endl;
-	std::cin >> n;
-	std::cout << std::endl << "Enter lower and upper limit :"<< std::endl;
-	std::cin >> a >> b;
+	a = 0;
+	b = 5;
+	n = 5;
 
 	integral = trapezoid(f, a, b, n);
 	std::cout << "Trapezoid rule: Integral value is : " <<integral << std::endl;
