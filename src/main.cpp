@@ -14,6 +14,7 @@
 #include "composition.h"
 #include "template_function.hpp"
 #include "ode.h"
+#include "integral.h"
 
 
 int main(){ 
@@ -30,6 +31,7 @@ int main(){
     test_composition();
     test_template_function();
     test_ode_solution();
+    test_integral();
     
     return 0;
 }
