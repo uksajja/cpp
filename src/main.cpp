@@ -13,11 +13,13 @@
 #include "function_pointer.h"
 #include "composition.h"
 #include "template_function.hpp"
+#include "template_class.hpp"
 #include "ode.h"
 #include "integral.h"
 
 
-int main(){ 
+int main(){
+    //OOP Tests 
     test_instantiation();
     test_const_specifier();
     test_inheritance();
@@ -30,6 +32,9 @@ int main(){
     test_function_pointer();
     test_composition();
     test_template_function();
+    test_template_class();
+
+    //Math Tests
     test_ode_solution();
     test_integral();
     
