@@ -13,6 +13,7 @@
 #include "function_pointer.h"
 #include "composition.h"
 #include "template_function.hpp"
+#include "ode.h"
 
 
 int main(){ 
@@ -28,6 +29,7 @@ int main(){
     test_function_pointer();
     test_composition();
     test_template_function();
+    test_ode_solution();
     
     return 0;
 }
