@@ -3,6 +3,7 @@
 #include<climits>
 
 //Project includes
+//OOP includes
 #include "instantiation.h"
 #include "const_specifier.h"
 #include "inheritance.h"
@@ -14,8 +15,13 @@
 #include "composition.h"
 #include "template_function.hpp"
 #include "template_class.hpp"
+
+//Math includes
 #include "ode.h"
 #include "integral.h"
+
+//DSA includes
+#include "hash_table.h"
 
 
 int main(){
@@ -37,6 +43,9 @@ int main(){
     //Math Tests
     test_ode_solution();
     test_integral();
+
+    //DSA Tests
+    test_hash_table();
     
     return 0;
 }
