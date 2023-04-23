@@ -20,6 +20,6 @@ void test_pure_virtual_functions() {
     s2->calculate_area();
     s2->PrintDetails();
 
-    //Shape *s2  = new Rectangle(10, 20); // Rectangle Object cannot be initiated as area() function is defined for Rectangle class
+    //Shape *s2  = new Rectangle(10, 20); // Rectangle Object cannot be initiated as calculate_area() function is NOT defined for Rectangle class
 
 }
