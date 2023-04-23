@@ -1,6 +1,7 @@
 //System includes
 #include<iostream>
 #include<climits>
+#include<cmath>
 
 //Project includes
 //OOP includes
@@ -22,6 +23,7 @@
 
 //DSA includes
 #include "hash_table.h"
+#include "single_linked_list.hpp"
 
 
 int main(){
@@ -46,6 +48,9 @@ int main(){
 
     //DSA Tests
     test_hash_table();
+    test_single_linked_list();
+
+
     
     return 0;
 }

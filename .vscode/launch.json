@@ -4,6 +4,26 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "gcc-dbg",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${workspaceFolder}/build/gcc-dbg/cpp-2023.0.exe",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/mingw64/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
 
         {
             "name": "VS-Release",
@@ -17,10 +37,30 @@
             "console": "externalTerminal"
         },
         {
-            "name": "(gdb) Attach",
+            "name": "clang-cl-dbg",
             "type": "cppdbg",
             "request": "attach",
-            "program": "${workspaceFolder}/build/clang-cl/Debug/cpp-2023.0.exe",
+            "program": "${workspaceFolder}/build/clang-cl-dbg/Debug/cpp-2023.0.exe",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/mingw64/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "clang-gnu-dbg",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${workspaceFolder}/build/clang-gnu-dbg/cpp-2023.0.exe",
             "MIMode": "gdb",
             "miDebuggerPath": "C:/mingw64/bin/gdb",
             "setupCommands": [
