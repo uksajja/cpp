@@ -24,6 +24,7 @@
 //DSA includes
 #include "hash_table.h"
 #include "single_linked_list.hpp"
+#include "vector-stl.h"
 
 
 int main(){
@@ -50,7 +51,11 @@ int main(){
     test_hash_table();
     test_single_linked_list();
 
+    //STL
+    test_vector_initializations();
+    test_stl_vector_operations();
+    test_push_back_emplace();
 
-    
+   
     return 0;
 }
