@@ -3,6 +3,8 @@
 #include<climits>
 #include<cmath>
 
+#include<gtest/gtest.h>
+
 //Project includes
 //OOP includes
 #include "instantiation.h"
@@ -27,7 +29,11 @@
 #include "vector-stl.h"
 
 
-int main(){
+int main(int argc, char* argv[]){
+
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+
     //OOP Tests 
     test_instantiation();
     test_const_specifier();
