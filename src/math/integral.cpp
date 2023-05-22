@@ -2,13 +2,12 @@
 
 #include "integral.h"
 
-Integral::Integral(double (*fun) (double), double a, double b, int n, int dbg_level = 1){
+Integral::Integral(double (*fun) (double), double a, double b, int n){
 	// constructor stub
 	nIntervals = n;
 	lower = a;
 	upper = b;
 	f = fun;
-	echo_level = dbg_level;
 }
 
 Integral::~Integral() {
