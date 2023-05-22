@@ -11,6 +11,7 @@ string(CONCAT EXE_NAME ${PROJECT_NAME} "-" ${MAJOR_VERSION} "." ${MINOR_VERSION}
 
 #Define Build Types
 set(CMAKE_CONFIGURATION_TYPES  Release Debug)
+
 #Set Default Build Type
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -28,8 +29,16 @@ else ()
     set_directory_properties(PROPERTIES COMPILE_DEFINITIONS "NDEBUG")
 endif ()
 
+#Time Stamp
 string(TIMESTAMP BUILD_TIME "%Y-%m-%d %H:%M:%S UTC" UTC)
 string(TIMESTAMP BUILD_DATE "%Y-%m-%d" UTC)
+
+#Testing Library
+enable_testing() # to discover tests in test explorer
+add_subdirectory(lib/googletest)
+include_directories(lib/googletest/googletest/include)
+
+
 
 #Sources and include directories
 file(GLOB_RECURSE LIST_SOURCES CONFIGUTRE_DEPENDS "src/*.cpp")
@@ -43,6 +52,7 @@ list(REMOVE_DUPLICATES LIST_INCUDE_DIRS)
 
 add_executable(${EXE_NAME} ${LIST_SOURCES})
 target_include_directories(${EXE_NAME} PRIVATE ${LIST_INCUDE_DIRS})
+target_link_libraries(${EXE_NAME} PRIVATE gtest)
 
 add_compile_options(${EXE_NAME} PRIVATE
     $<$<COMPILE_LANGUAGE:CXX:/w >

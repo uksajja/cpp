@@ -7,10 +7,9 @@ class Integral {
 		double lower;
 		double upper;
 		double (*f) (double);
-		int echo_level;
 
 	public:
-		Integral(double (*f) (double), double a, double b, int n, int echo_level);
+		Integral(double (*f) (double), double a, double b, int n);
 		virtual ~Integral();
 		double trapezoid();
 		double simpson13();

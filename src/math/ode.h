@@ -9,9 +9,8 @@ private:
 	double finalVal;
 	int    nIntervals;
 	double (*f) (double, double);
-	int echo_level;
 public:
-	OdeSoln(double (*funptr) (double, double), double ival, double isol, double fval, int n, int echo_level);
+	OdeSoln(double (*funptr) (double, double), double ival, double isol, double fval, int n);
 	virtual ~OdeSoln();
 	double Euler();
 	double RK4();

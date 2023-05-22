@@ -4,14 +4,13 @@
 
 using namespace std;
 
-OdeSoln :: OdeSoln(double (*funptr) (double, double), double ival, double isol, double fval, int n, int dbg_level=1){
+OdeSoln :: OdeSoln(double (*funptr) (double, double), double ival, double isol, double fval, int n){
 	// constructor stub
 	iniVal = ival;
 	iniSoln = isol;
 	finalVal = fval;
 	nIntervals = n;
 	f = funptr;
-	echo_level = dbg_level;
 }
 OdeSoln::~OdeSoln() {
 	// TODO Auto-generated destructor stub
@@ -24,7 +23,7 @@ double OdeSoln :: Euler(){
 	value = iniSoln;
 	for(int i=0; i< nIntervals; i++){
 		value += h * f(iniVal+ i*h, value);
-		if(echo_level>1) std::cout << "y[" <<i <<"] = " << value << std::endl;
+		//std::cout << "y[" <<i <<"] = " << value << std::endl;
 	}
 	return(value);
 }
@@ -42,7 +41,7 @@ double OdeSoln :: RK4(){
 		F3 = h*f(xk+h/2, value+F2/2);
 		F4 = h*f(xk+h,   value+F3);
 		value = value + (F1+2*F2+2*F3+F4)/6;
-		if(echo_level>1) std::cout << "y[" <<i <<"] = " << value << std::endl;
+		//std::cout << "y[" <<i <<"] = " << value << std::endl;
 	}
 	return(value);
 }
@@ -73,7 +72,7 @@ void test_RK4(){
 	double isol = 3.0;
 	double rk4_sol, exact_sol, diff;
 	int n = 10;
-	OdeSoln ODE(fun, ival, isol, fval, n, 10);
+	OdeSoln ODE(fun, ival, isol, fval, n);
 	exact_sol = exactSol(1.0);
 	rk4_sol = ODE.RK4();
 	diff = exact_sol - rk4_sol;
