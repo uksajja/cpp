@@ -19,13 +19,15 @@ public:
     void unionSet(int x, int y) {
         int rootX = find(x);
         int rootY = find(y);
-        if(rank[rootX] > rank[rootY]){
-            root[rootY] = rootX;
-        } else if( rank[rootX] < rank[rootY] ){
-            root[rootX] = rootY;
-        } else {
-            root[rootY] = rootX;
-            rank[rootX] += 1;
+        if(rootX != rootY) {
+            if(rank[rootX] > rank[rootY]) {
+                root[rootY] = rootX;
+            } else if(rank[rootX] < rank[rootY]) {
+                root[rootX] = rootY;
+            } else {
+                root[rootY] = rootX;
+                rank[rootX] += 1;
+            }
         }
     }
 
