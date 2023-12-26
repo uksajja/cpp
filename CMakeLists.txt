@@ -36,7 +36,7 @@ string(TIMESTAMP BUILD_DATE "%Y-%m-%d" UTC)
 #Testing Library
 enable_testing() # to discover tests in test explorer
 add_subdirectory(lib/googletest)
-include_directories(lib/googletest/googletest/include)
+include_directories(lib/googletest/googletest/include, lib/googletest/googlemock/include)
 
 
 
@@ -52,7 +52,7 @@ list(REMOVE_DUPLICATES LIST_INCUDE_DIRS)
 
 add_executable(${EXE_NAME} ${LIST_SOURCES})
 target_include_directories(${EXE_NAME} PRIVATE ${LIST_INCUDE_DIRS})
-target_link_libraries(${EXE_NAME} PRIVATE gtest)
+target_link_libraries(${EXE_NAME} PRIVATE gtest gmock)
 
 add_compile_options(${EXE_NAME} PRIVATE
     $<$<COMPILE_LANGUAGE:CXX:/w >

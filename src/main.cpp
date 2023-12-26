@@ -4,6 +4,7 @@
 #include<cmath>
 
 #include<gtest/gtest.h>
+#include<gmock/gmock.h>
 
 //Project includes
 //OOP includes
@@ -28,10 +29,14 @@
 #include "single_linked_list.hpp"
 #include "vector-stl.h"
 
+//STL includes
+#include "list-stl.hpp"
+
 
 int main(int argc, char* argv[]){
 
-    ::testing::InitGoogleTest(&argc, argv);
+    ::testing::InitGoogleMock(&argc, argv);
+    //::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 
     //OOP Tests 
@@ -62,6 +67,9 @@ int main(int argc, char* argv[]){
     test_stl_vector_operations();
     test_push_back_emplace();
 
-   
+    stl_list_instantiation();
+    stl_list_methods();
+
+
     return 0;
 }
