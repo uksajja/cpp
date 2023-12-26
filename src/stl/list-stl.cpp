@@ -1,0 +1,120 @@
+// STL - list() 
+#include<list-stl.hpp>
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+void show(std::list<int> l){
+    std::cout <<" List : ";
+    for(auto i: l){
+        std::cout << i << "   ";
+    }
+    std::cout << std::endl;
+}
+void stl_list_instantiation() {
+    std::cout << "List Instantiation!\n";
+    
+    int a[] = {1,2,3,4,5};
+    std::vector<int> v{10,20,30};
+
+    std::list<int> l = { 25, 35, 45, 55, 65 };
+    show(l);
+    
+    std::list<int> l1;
+    show(l1);//List : 
+    
+    std::list<int> l2{1,2,3};
+    show(l2);//List : 1   2   3 
+    
+    std::list<int> l3(5);
+    show(l3);//List : 0   0   0   0   0
+    
+    std::list<int> l4(4, 10);
+    show(l4);//List : 10   10   10   10
+    
+    std::list<int> l5(l2.begin(), l2.end());
+    show(l5);//List : 1   2   3
+    
+    std::list<int> l6(v.begin(), v.end());
+    show(l6);//List : 10   20   30 
+    
+    std::list<int> l7(a, a+5);
+    show(l7);//List : 1   2   3   4   5 
+    
+    std::list<int> l8(10);
+    int value = 1;
+    std::generate(l8.begin(), l8.end(), [&value] (){return value++;});
+    show(l8);//List : 1   2   3   4   5   6   7   8   9   10
+    
+    std::cout<< "value: " << value <<std::endl;//value: 11
+    std::list<int> l9(6);
+    std:fill(l9.begin(), l9.end(), value);
+    show(l9); //List : 11   11   11   11   11   11  
+}
+void stl_list_methods(){
+    std::cout << "List Methods!\n";
+    
+    std::list<int> l1{1,2,3};
+    std::list<int> l2(5, 10);
+    l1.swap(l2);
+    show(l1);//List : 10   10   10   10   10 
+    show(l2);//List : 1   2   3
+    
+    l2.reverse();
+    show(l2);//List : 3   2   1
+    
+    std::list<int> l3;
+    l3.assign(7, 9);
+    show(l3);//List : 9   9   9   9   9   9   9 
+    
+    l1.push_front(20);
+    l1.push_back(30);
+    show(l1);//List : 20   10   10   10   10   10   30
+    
+    l1.insert(++l1.begin(), 45);
+    show(l1);//List : 20   45   10   10   10   10   10   30
+    
+    std::list<int>::iterator it = l1.begin();
+    std::advance(it, 5);
+    l1.insert(it, 99);
+    show(l1);//List : 20   45   10   10   10   99   10   10   30
+    
+    l1.remove(10);// remove all occurrences of 10
+    show(l1);//List : 20   45   99   30
+    
+    std::list<int>::iterator pos = l1.begin();
+    std::advance(pos, 2); // it is now at position=3
+    l1.erase(pos);//delete an element at position (it=3) i.e, 99
+    show(l1);//List : 20   45   30
+    
+    l1.pop_back();
+    show(l1);//List : 20   45
+    
+    l1.pop_front();
+    show(l1);//List : 45
+
+    std::list<int> l{0,1,2,3,4,5,6,7,8,9};
+    show(l);//List : 0   1   2   3   4   5   6   7   8   9 
+    std::list<int>::iterator itr = l.begin();
+    std::advance(itr, 3);
+    l.insert(itr, 66); 
+    show(l);//List : 0   1   2   66   3   4   5   6   7   8   9
+    std::advance(itr, -1);//itr was advanced after insert. Hence -1 is needed to move back
+    l.erase(itr);//List : 0   1   2   3   4   5   6   7   8   9
+    show(l);
+    
+    std::list<int>::iterator it1 = l.begin();
+    std::list<int>::iterator it2 = l.begin();
+    std::advance(it1, 5);
+    std::advance(it2, 8);
+    l.erase(it1, it2);//delete elements between it1 (=5) and it2-1(=7) but excluding it2. 
+    show(l);//List : 0   1   2   3   4   8   9
+    // After erasing it1 cannot be used. However, it2 can be used as element at it2 is not erased
+    
+    int a = l.front();
+    int b = l.back();
+    std::cout << "a: " << a << ", b: " << b << std::endl;
+    
+    l.clear();//Empty the list
+    show(l);//List : 
+}
