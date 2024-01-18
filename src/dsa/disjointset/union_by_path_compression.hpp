@@ -1,5 +1,8 @@
 // Path Compression of a Disjoint Set
 #pragma once
+
+#include <vector>
+
 class UnionByPathCompression{
 public:
     UnionByPathCompression(int sz) : root(sz) {

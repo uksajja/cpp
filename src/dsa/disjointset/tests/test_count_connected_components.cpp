@@ -1,8 +1,9 @@
 //TEST Count Connected Components
 
 
-#include<gtest/gtest.h>
-#include<countConnectedComponents.hpp>
+#include <gtest/gtest.h>
+
+#include "count_connected_components.hpp"
 
 TEST(DISJOINTSET, connectedComponents1){
     /*

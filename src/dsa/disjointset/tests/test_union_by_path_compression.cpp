@@ -2,7 +2,8 @@
 //disjoint set tests
 #include<iostream>
 #include<gtest/gtest.h>
-#include<unionByPathCompression.hpp>
+
+#include"union_by_path_compression.hpp"
 
 TEST(DISJOINTSET, unionByPathCompression){
     std::cout << std::boolalpha;

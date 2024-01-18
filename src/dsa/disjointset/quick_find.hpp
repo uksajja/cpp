@@ -1,5 +1,8 @@
 // Disjoint Set - Quick Find Algorithm
 #pragma once
+
+#include <vector>
+
 class QuickFind {
 public:
     QuickFind(int sz): root(sz){

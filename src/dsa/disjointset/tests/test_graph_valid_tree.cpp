@@ -1,7 +1,8 @@
 // Test Graph Valid Tree
 
 #include<gtest/gtest.h>
-#include<graphValidTree.hpp>
+
+#include"graph_valid_tree.hpp"
 
 TEST(DISJOINTSET, GraphValidTree1){
     SolutionGraphValidTree Sol;
