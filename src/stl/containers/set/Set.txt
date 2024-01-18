@@ -1,0 +1,116 @@
+//STL - Set
+/*Sets are a type of associative containers 
+(1) each element is unique, because the value of the element identifies it
+(2) elements are stored in a specific order (default order is ascending order)
+(3) internally use the working principle of a Binary Search Tree to store elements 
+(4) the value of the element cannot be modified once it is added to the set, though it is possible to remove and add the modified value of that element.
+
+Typical Internal DataStructure - Binary Tree
+---------------------------------------------
+*/
+template<
+    class Key,
+    class Compare = std::less<Key>,
+    class Allocator = std::allocator<Key>
+> class set;
+
+namespace pmr {
+    template<
+        class Key,
+        class Compare = std::less<Key>
+    > using set = std::set<Key, Compare, std::pmr::polymorphic_allocator<Key>>;
+}
+/*
+Lookup
+--------------
+contains()
+find()
+count()
+equal_range() //equal_range() in general returns range that includes all elements matching a specific key
+lower_bound()
+upper_bound()
+
+Member functions
+----------------
+operator=
+get_allocator()
+
+Modifiers/Update methods/Operations
+------------------------
+insert()
+insert_range()
+emplace()
+emplace_hint()
+erase()
+clear()
+swap()
+extract()
+merge()
+
+Capacity
+--------------
+empty()
+size()
+max_size()
+
+
+Iterator functions
+--------------
+begin(),  end()
+cbegin(), cend()
+
+emplace() vs insert:
+--------------------
+When we use insert, we create an object and then insert it into the multiset. 
+With emplace(), the object is constructed in-place.
+
+Other methods:
+--------------
+rbegin(), rend()
+cbegin(), cend()
+crbegin(), crend()
+emplace_hint(iterator position, value)
+
+Iterators:
+----------
+std::set<int>::iterator
+std::set<int>::const_iterator
+std::set<int>::reverse_iterator
+std::set<int>::const_reverse_iterator
+auto
+
+Non-member functions:
+---------------------
+operator==
+operator!=
+operator<
+operator<=
+operator>
+operator>=
+operator<=>
+std::swap()
+std::erase_if()
+
+Observers:
+----------
+
+key_comp() - return the function that compares keys
+value_comp() - return the function that compares values
+For a set, both are same
+
+Member Types: 
+(Thes are not functions. 
+These are Types that can be used to declare variable to collect appropriate values of that type)
+-------------
+key_type
+value_type
+size_type -- std::size_t
+key_compare
+value_compare
+difference_type - std::ptrdiff_t
+allocator_type
+reference
+const reference
+pointer - std::allocator_traits<Allocator>::pointer
+
+*/

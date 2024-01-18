@@ -1,0 +1,92 @@
+//unordered_set
+/*
+Associative container that contains unique objects of type Key
+
+set vs unordered_set:
+---------------------
+set - elements are sorted
+unordered_set - elements are NOT stored in any specific order.
+
+Typical Internal DataStructure - Hash Table
+-------------------------------------------
+used for unique elements without any specific ordering
+it internally uses the working principle of a hashtable to store elements
+*/
+
+template<
+    class Key,
+    class Hash = std::hash<Key>,
+    class KeyEqual = std::equal_to<Key>,
+    class Allocator = std::allocator<Key>
+> class unordered_set;
+
+namespace pmr {
+    template<
+        class Key,
+        class Hash = std::hash<Key>,
+        class Pred = std::equal_to<Key>
+    > using unordered_set = std::unordered_set<Key, Hash, Pred,
+                                std::pmr::polymorphic_allocator<Key>>;
+}
+
+Special methods:
+----------------
+bucket()           - returns buckket for a specific key
+bucket_size()      - returns the number of elements in a bucket
+bucket_count()     - retirns number of buckets
+max_bucket_count() - returns maximum number of buckets
+
+load_factor()      - returns average number of elements per bucket
+max_load_factor()  - maximum average number of elements per bucket
+hash_function()    - returns the function used to hash the keys
+key_eq()           - returns the function used to compare the keys
+begin(), end() iterators can be used on buckets
+
+Lookup
+--------------
+contains()
+find()
+count()
+equal_range() //equal_range() in general returns range that includes all elements matching a specific key
+
+Member functions
+----------------
+operator=
+get_allocator()
+
+Modifiers/Update methods/Operations
+------------------------
+insert()
+insert_range()
+emplace()
+emplace_hint()
+erase()
+clear()
+swap()
+extract()
+merge()
+
+Capacity
+--------------
+empty()
+size()
+max_size()
+
+
+Iterators
+--------------
+begin(),  end()
+cbegin(), cend()
+
+
+Non-member functions:
+---------------------
+operator==
+operator!=
+operator<
+operator<=
+operator>
+operator>=
+operator<=>
+std::swap()
+std::erase_if()

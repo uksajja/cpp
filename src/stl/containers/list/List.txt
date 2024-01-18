@@ -1,0 +1,89 @@
+//STL - List (Doubly Linked List)
+/*
+/*
+List ==> a doubly linked list. 
+Lists are sequence containers that allow non-contiguous memory allocation. 
+As compared to vector, the list has slow traversal, but once a position has been found, insertion and deletion are quick.
+*/
+
+https://en.cppreference.com/w/cpp/container/list
+
+https://www.geeksforgeeks.org/list-cpp-stl/#
+
+*/
+/*
+
+#include<list>
+
+
+template<
+    class T,
+    class Allocator = std::allocator<T>
+> class list;
+
+namespace pmr {
+    template< class T >
+    using list = std::list<T, std::pmr::polymorphic_allocator<T>>;
+}
+
+syntax:
+std::list<std::string> strlist;
+
+
+Time Complexity:
+----------------
+
+Element Access:
+---------------
+front()
+back()
+
+Capacity:
+---------------
+size(),
+max_size()
+empty()
+
+Modifiers methods:
+---------------
+push_front(), push_back()
+pop_front(), pop_back()
+insert(), 
+emplace()
+emplace_front()
+emplace_back()
+insert_range()
+append_range()
+prepend_range()
+erase(), 
+clear()
+
+
+Other methods:
+---------------
+assign()
+assign_range()
+get_allocator()
+
+splice()
+remove()
+remove_if()
+sort()
+merge()reverse()
+unique()
+clear()
+
+Iterators:
+---------------
+begin(), end()
+rbegin(), rend()
+cbegin(), cend()
+crbegin(), crend()
+
+Non-Member Functions
+--------------------
+operators (==, !=, <, >, <=, >=, <==>)
+std::swap()
+erase()
+erase_if()
+*/
