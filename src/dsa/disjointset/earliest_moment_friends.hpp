@@ -8,15 +8,18 @@ Friendship is symmetric. That means if a is friends with b, then b is friends wi
 Return the earliest time for which every person became acquainted with every other person. If there is no such earliest time, return -1.
 
 */
-#include<optimizedUnion.hpp>
-#include<algorithm>
+#pragma once
+
+#include <algorithm>
+
+#include "optimized_union.hpp"
 
 class SolutionEarliestMoment {
 public:
     int earliestAcq(std::vector<std::vector<int>>& logs, int n) {
         OptimizedUnion ou = OptimizedUnion(n);
         int n_edges = 0;
-        std::sort(logs.begin(), logs.end(), [](const std::vector<int>& a, std::vector<int>& b){ return a[0]<b[0];});
+        std::sort(logs.begin(), logs.end(), [](const std::vector<int>& a, const std::vector<int>& b){ return a[0]<b[0];});
         for(int i=0; i<logs.size(); i++) {
             if (!ou.isConnected(logs[i][1], logs[i][2])) {
                 ou.unionSet(logs[i][1], logs[i][2]);

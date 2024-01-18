@@ -8,12 +8,16 @@ You are given an n x n matrix isConnected where isConnected[i][j] = 1 if the ith
 Return the total number of provinces.
 
 */
+#pragma once
 
-#include<optimizedUnion.hpp>
+#include<set>
+
+#include "optimized_union.hpp"
 
 
 class SolutionNumberOfProvinces {
 public:
+    SolutionNumberOfProvinces() = default;
     int findCircleNum(std::vector<std::vector<int>>& isConnected) {
         int n = isConnected.size();
         std::set<int> provinces;

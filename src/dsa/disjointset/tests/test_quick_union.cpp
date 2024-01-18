@@ -2,7 +2,8 @@
 //disjoint set tests
 #include<iostream>
 #include<gtest/gtest.h>
-#include<quickUnion.hpp>
+
+#include"quick_union.hpp"
 
 TEST(DISJOINTSET, quickUnion){
     std::cout << std::boolalpha;
