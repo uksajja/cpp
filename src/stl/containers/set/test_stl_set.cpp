@@ -1,183 +1,13 @@
-//STL - Set
-/*Sets are a type of associative containers 
-(1) each elements is unique, because the value of the element identifies it
-(2) elements are stored ina specific order (default order is ascending order)
-(3) internally use the working principle of a Binary Search Tree to store elements 
-(4) the value of the element cannot be modified once it is added to the set, though it is possible to remove and add the modified value of that element.
-*/
-/*
-Common methods:
----------------
-begin(), end()
-size()
-empty()
-insert()
-emplace() 
-find()
-count()
-erase()
-clear()
-swap()
-emplace() vs insert:
---------------------
-When we use insert, we create an object and then insert it into the multiset. With emplace(), the object is constructed in-place.
+#include <gmock/gmock.h>
+#include <gtest/gtest.h>
+#include <set>
+#include <vector>
+#include <algorithm>
+#include <iostream>
+#include <string>
 
-Other methods:
---------------
-rbegin(), rend()
-cbegin(), cend()
-crbegin(), crend()
-emplace_hint(iterator position, value)
+#include "stl_set.hpp"
 
-Iterators:
-----------
-std::set<int>::iterator
-std::set<int>::const_iterator
-std::set<int>::reverse_iterator
-std::set<int>::const_reverse_iterator
-auto
-*/
-
-#include<gmock/gmock.h>
-#include<gtest/gtest.h>
-#include<set>
-#include<vector>
-#include<algorithm>
-#include<iostream>
-
-
-struct compare_object{
-    bool operator()(int a, int b) const{
-        return (a%10 == 0 && b%10 == 0 && a<b);
-    }
-};
-class Point {
-    public:
-        Point(int x, int y): mX(x), mY(y){}
-        int getX() { return mX; }
-        int getY() { return mY; }
-        bool operator<(Point p) const {
-            return (mX < p.mX)? true : (mX==p.mX)? (mY<p.mY) : false;
-        }
-        bool operator>(Point p) const {
-            return (mX > p.mX)? true : (mX==p.mX)? (mY>p.mY) : false;
-        }
-        
-    private:
-        int mX, mY;
-};
-
-std::ostream& operator<<(std::ostream& stream, Point A) {
-    stream << "( " << A.getX() << "," << A.getY() <<")" ;
-    return stream;
-}
-
-std::ostream& operator<<(std::ostream& stream, std::pair<int,int> A) {
-    stream << "( " << A.first << "," << A.second <<")" ;
-    return stream;
-}
-//Show methods
-/*
-void show(std::set<int> s){
-    if(s.empty()){
-        std::cout << " The set is empty " << std::endl;
-        return;
-    }
-    std::cout << "The elements in the set are (auto): " << std::endl;
-    for(auto it : s){
-        std::cout << it << "  " ;
-
-    }
-    std::cout << std::endl;
-}
-void show(std::set<int, std::greater<int>> s){
-    if(s.empty()){
-        std::cout << " The set is empty " << std::endl;
-        return;
-    }
-    std::cout << "The elements in the set(greater) are (auto): " << std::endl;
-    for(auto it : s){
-        std::cout << it << "  " ;
-
-    }
-    std::cout << std::endl;
-}
-void show(std::set<int, compare_object> s){
-    if(s.empty()){
-        std::cout << " The set is empty " << std::endl;
-        return;
-    }
-    std::cout << "The elements in the set are (auto): " << std::endl;
-    for(auto it : s){
-        std::cout << it << "  " ;
-
-    }
-    std::cout << std::endl;
-}*/
-
-template< class T>
-void show(T s){
-    if(s.empty()){
-        std::cout << " The set is empty " << std::endl;
-        return;
-    }
-    std::cout << "Set has " << s.size() << "elements." << std::endl;
-    std::cout << "The elements in the set are (auto): " << std::endl;
-    for(auto it : s){
-        std::cout << it << "  " ;
-
-    }
-    std::cout << std::endl;
-}
-
-void show1(std::set<int> s){
-    if(s.empty()){
-        std::cout << " The set is empty " << std::endl;
-        return;
-    }
-    std::cout << "The elements in the set are (iterator): " << std::endl;
-    for(std::set<int>::iterator it = s.begin(); it!=s.end(); it++){
-        std::cout << *it << "  " ;
-
-    }
-    std::cout << std::endl;
-}
-void show2(std::set<int> s){
-    if(s.empty()){
-        std::cout << " The set is empty " << std::endl;
-        return;
-    }
-    std::cout << "The elements in the set are (const_iterator): " << std::endl;
-    for(std::set<int>::const_iterator it = s.cbegin(); it!=s.cend(); it++){
-        std::cout << *it << "  " ;
-
-    }
-    std::cout << std::endl;
-}
-void show3(std::set<int> s){
-    if(s.empty()){
-        std::cout << " The set is empty " << std::endl;
-        return;
-    }
-    std::cout << "The elements in the set in reverse order are (reverse_iterator): " << std::endl;
-    for(std::set<int>::const_reverse_iterator it = s.rbegin(); it!=s.rend(); it++){
-        std::cout << *it << "  " ;
-
-    }
-    std::cout << std::endl;
-}
-void show4(std::set<int> s){
-    if(s.empty()){
-        std::cout << " The set is empty " << std::endl;
-        return;
-    }
-    std::cout << "The elements in the set in reverse order are (const_reverse_iterator): " << std::endl;
-    for(std::set<int>::const_reverse_iterator it = s.crbegin(); it!=s.crend(); it++){
-        std::cout << *it << "  " ;
-
-    }
-    std::cout << std::endl;
-}
 TEST(STLSET, show){
     std::set<int> s({4,3,1,5,2});
     std::set<int, std::greater<int>> rs({4,3,1,5,2});
@@ -326,6 +156,7 @@ TEST(STLSET, keycomp3){
     EXPECT_FALSE(f_comp(5, 5));
     EXPECT_FALSE(f_comp(15, 5));
 }
+
 TEST(STLSET, equaloperator){
     std::set<int> s1 = {1,2,3,4}, s2;
     s2 = s1;
@@ -339,7 +170,8 @@ TEST(STLSET, insert){
 TEST(STLSET, getallocator){
     //The set::get_allocator() in C++ STL is an in-built function which returns the copy of the allocator object associated with the set.
     std::set<int> s;
-    int *mem = s.get_allocator().allocate(10); // declaring mem as any data type other than int* will result in an error
+    std::set<int>::allocator_type a = s.get_allocator();
+    int *mem = a.allocate(10); // declaring mem as any data type other than int* will result in an error
     for(int i = 0; i<10; i++){
         *(mem+i) = 10+i;
     }
@@ -349,8 +181,21 @@ TEST(STLSET, getallocator){
     for(int i = 0; i<10; i++){
         std::cout << *(mem+i) << " ";
     }
+    a.deallocate(mem, 10);
+}
+// TODO:The Following needs to improve 
+TEST(STLSET, getallocator2){
+    std::set<std::string> str{"c++", "fortran", "python"};
+    std::set<std::string>::allocator_type a = str.get_allocator();
+    std::string* strset = a.allocate(2);
+    //strset[0] = std::string("java");
+    //strset[1] = std::string("c");
+    //std::cout << strset[0] << "  " << strset[1] << std::endl;
+    a.deallocate(strset,2);
 }
 TEST(STLSET, emplaceVSinsert1){
+    // For user defined objects (i.e., Point in this eample), '<' and '>' operators need to be defined explicitly.
+    // otherwise, sorting order is not known as there is no default order.
     std::set<Point> s;
     Point p(2,3);
     s.insert(Point(0,3));
@@ -369,6 +214,18 @@ TEST(STLSET, emplaceVSinsert2){
     show(s);
 }
 TEST(STLSET, emplaceVSinsert3){
+    //The pairs in a set are stored in sorted order, sorted by the key i.e. the first value of the pair.
+    std::set<std::pair<int, int>> s;
+    s.insert({10,4});
+    s.insert({12,3});
+    s.emplace(10, 3);
+    s.emplace(-10,1);   
+    // s.insert(1,2); This leads to an error where as s.emplace(1,2) works fine
+    show(s);
+}
+TEST(STLSET, emplaceVSinsert4){
+    //The pairs in a set are stored in sorted order, sorted by the key i.e. the first value of the pair.
+    //Here the pairs are stored in descending order of first value(i.e., key)
     std::set<std::pair<int, int>, std::greater<std::pair<int, int>>> s;
     s.insert({10,4});
     s.insert({12,3});
@@ -377,6 +234,59 @@ TEST(STLSET, emplaceVSinsert3){
     // s.insert(1,2); This leads to an error where as s.emplace(1,2) works fine
     show(s);
 }
+
+TEST(STLSET, emplacehint) {
+    std::set<int> s={2,3,6,9};
+    show(s);
+    std::set<int>::iterator it = s.begin();
+    std::advance(it, 2);
+    s.emplace_hint(it,8);
+    show(s);
+    s.emplace_hint(it,4); // This operation will be slow as 'it' is NOT at an optimal position to place 4
+    show(s);
+}
+//lower_bound() - returns an iterator to the first element not less than the given key
+TEST(STLSET, lowerbound){
+    std::set<int> s{10, 20, 30, 40, 46, 50 };
+    int n = *(s.lower_bound(25));//30 is the first elemet that is not less than 25
+    EXPECT_EQ(n, 30);
+}
+//lower_bound() - returns an iterator to the first element not less than the given key
+TEST(STLSET, lowerbound2){
+    std::set<int> s{10, 20, 30, 40, 46, 50 };
+    int n = *(s.lower_bound(20));// 20 is the first element that is not less than 20
+    EXPECT_EQ(n, 20);
+}
+//upper_bound() - returns an iterator to the first element greater than the given key
+TEST(STLSET, upperbound){
+    std::set<int> s{10, 20, 30, 40, 46, 50 };
+    int n = *(s.upper_bound(40)); //46 is the first element that is greater than 40
+    EXPECT_EQ(n, 46);
+}
+//upper_bound() - returns an iterator to the first element greater than the given key
+TEST(STLSET, upperbound2){
+    std::set<int> s{10, 20, 30, 40, 46, 50 };
+    int n = *(s.upper_bound(45));// 46 is the first element that is greater than 45
+    EXPECT_EQ(n, 46);
+}
+TEST(STLSET, merge){
+    /*
+    Attempts to extract ("splice") each element in source and insert it into *this using the comparison object of *this. 
+    If there is an element in *this with key equivalent to the key of an element from source, then that element is not extracted from source. 
+    No elements are copied or moved, only the internal pointers of the container nodes are repointed. 
+    All pointers and references to the transferred elements remain valid, but now refer into *this, not into source.
+    */
+    std::set<char> x = { 'C','A', 'K', 'B'};
+    std::set<char> y = { 'A', 'L', 'C', 'D'};
+    std::cout <<  x << std::endl;//{ 'A','B', 'C', 'K'}
+    std::cout << y << std::endl; //{ 'A','C', 'D', 'L'}
+    x.merge(y);
+    std::cout <<  x << std::endl;
+    std::cout << y << std::endl;
+    EXPECT_THAT(x, ::testing::ContainerEq(std::set<char>{'A','B','C','D', 'K', 'L'}));
+    EXPECT_THAT(y, ::testing::ContainerEq(std::set<char>{'A','C'}));
+}
+
 
 
 

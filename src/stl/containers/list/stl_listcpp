@@ -1,12 +1,14 @@
 // STL - list() 
-#include<list-stl.hpp>
-#include<iostream>
-#include<vector>
-#include<algorithm>
 
-void show(std::list<int> l){
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+#include "stl_list.hpp"
+
+void show(const std::list<int>& l){
     std::cout <<" List : ";
-    for(auto i: l){
+    for(auto& i: l){
         std::cout << i << "   ";
     }
     std::cout << std::endl;
