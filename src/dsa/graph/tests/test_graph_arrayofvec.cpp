@@ -1,5 +1,5 @@
 
-#include <gmock\gmock.h>
+#include <gmock/gmock.h>
 #include "graph_arrayofvec.hpp"
 
 TEST(GRAPH, arrayofvec){
