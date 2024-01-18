@@ -14,9 +14,9 @@ public:
             adjMatrix[i] = new int[n];
         }
         for(int i=0; i< n; i++){
-             for(int j=0; j<mVertices; j++){
-                 adjMatrix[i][j] = 0;
-             }
+            for(int j=0; j<mVertices; j++){
+                adjMatrix[i][j] = 0;
+            }
         }
         mEdges = 0;
     };

@@ -1,4 +1,5 @@
-#include <gmock\gmock.h>
+#include <gmock/gmock.h>
+
 #include "graph_vecofvec.hpp"
 
 TEST(GRAPH, vecofvec){
