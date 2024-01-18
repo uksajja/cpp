@@ -6,8 +6,9 @@ You are given an integer n and a list of edges where edges[i] = [ai, bi] indicat
 
 Return true if the edges of the given graph make up a valid tree, and false otherwise.
 */
+#pragma once
 
-#include<optimizedUnion.hpp>
+#include "optimized_union.hpp"
 
 class SolutionGraphValidTree {
 public:

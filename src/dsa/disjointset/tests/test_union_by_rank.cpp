@@ -2,7 +2,8 @@
 //disjoint set tests
 #include<iostream>
 #include<gtest/gtest.h>
-#include<unionByRank.hpp>
+
+#include"union_by_rank.hpp"
 
 TEST(DISJOINTSET, unionByRank){
     std::cout << std::boolalpha;

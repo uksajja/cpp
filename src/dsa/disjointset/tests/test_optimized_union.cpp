@@ -2,7 +2,8 @@
 //disjoint set tests
 #include<iostream>
 #include<gtest/gtest.h>
-#include<optimizedUnion.hpp>
+
+#include"optimized_union.hpp"
 
 TEST(DISJOINTSET, optimizedUnion){
     std::cout << std::boolalpha;

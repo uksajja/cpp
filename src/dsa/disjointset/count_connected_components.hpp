@@ -16,7 +16,9 @@ ai != bi
 There are no repeated edges.
 */
 
-#include<optimizedUnion.hpp>
+#pragma once
+
+#include "optimized_union.hpp"
 
 class SolutionConnectedComponents {
 public:
@@ -27,8 +29,9 @@ public:
         }
         int c = 0;
         for(int i=0; i<n; i++){
-            if(i == ou.find(i))
+            if(i == ou.find(i)) {
                 c++;
+            }
         }
         return c;
     }

@@ -1,7 +1,9 @@
 //dsa tests
 //disjoint set tests
-#include<gtest/gtest.h>
-#include<quickFind.hpp>
+#include <gtest/gtest.h>
+#include <iostream>
+
+#include "quick_find.hpp"
 
 TEST(DISJOINTSET, quickFind){
     std::cout << std::boolalpha;

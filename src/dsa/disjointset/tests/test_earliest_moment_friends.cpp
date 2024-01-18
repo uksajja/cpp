@@ -17,7 +17,8 @@ Output: 3
 Explanation: At timestamp = 3, all the persons (i.e., 0, 1, 2, and 3) become friends.
 */
 #include<gtest/gtest.h>
-#include<earliestMomentFriends.hpp>
+
+#include "earliest_moment_friends.hpp"
 
 TEST(DISJOINTSET, EarliestMoment1){
     SolutionEarliestMoment sol;
