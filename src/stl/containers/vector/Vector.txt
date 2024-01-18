@@ -1,0 +1,79 @@
+// STL Vector
+
+https://en.cppreference.com/w/cpp/container/vector
+
+https://www.geeksforgeeks.org/vector-in-cpp-stl/?ref=shm
+
+/*
+#include<vector>
+
+template<
+    class T,
+    class Allocator = std::allocator<T>
+> class vector;
+
+namespace pmr {
+    template< class T >
+    using vector = std::vector<T, std::pmr::polymorphic_allocator<T>>;
+}
+
+About:
+-------------------------
+    . Dynamic size
+    . Contiguous memory
+    . Heap allocated, fast 
+    . Reordering, resizing is costly
+    . Random access
+    . Iterators  invalidated after resize
+
+Time Complexity
+---------------
+push_back() - insert at end - O(1)
+insert at the front - O(n)
+
+Element Access
+--------------
+at()
+operator[]
+front()
+back()
+data()
+
+Member functions
+----------------
+operator=
+assign()
+assign_range()
+get_allocator()
+
+Modifiers/Update methods/Operations
+------------------------
+push_back()
+pop_back()
+emplace_back()
+insert()
+emplace()
+insert_range()
+append_range()
+swap()
+erase()
+clear()
+
+Capacity
+--------------
+empty()
+size()
+max_size()
+capacity()
+resize()
+reserve()
+shrink_to_fit()
+
+
+Iterators
+--------------
+begin(),  end()
+cbegin(), cend()
+rbegin(), rend()
+crbegin(), crend()
+*/
