@@ -1,4 +1,4 @@
-#include <gmock\gmock.h>
+#include <gmock/gmock.h>
 #include "graph_adjmatrix.hpp"
 
 TEST(GRAPH, adjmatrix) {
