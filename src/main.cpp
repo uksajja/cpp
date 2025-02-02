@@ -27,13 +27,13 @@
 //DSA includes
 #include "hash_table.h"
 #include "single_linked_list.hpp"
-#include "vector-stl.h"
+#include "stl_vector.hpp"
 
 //STL includes
-#include "list-stl.hpp"
+#include "stl_list.hpp"
 
 
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[]) {
 
     ::testing::InitGoogleMock(&argc, argv);
     //::testing::InitGoogleTest(&argc, argv);
@@ -47,7 +47,7 @@ int main(int argc, char* argv[]){
     test_inheritance_ref();
     test_operator_overloading();
     test_explicit_keyword();
-    test_virtual_functions();  
+    test_virtual_functions();
     test_pure_virtual_functions();
     test_function_pointer();
     test_composition();
@@ -66,10 +66,6 @@ int main(int argc, char* argv[]){
     test_vector_initializations();
     test_stl_vector_operations();
     test_push_back_emplace();
-
-    stl_list_instantiation();
-    stl_list_methods();
-
 
     return 0;
 }

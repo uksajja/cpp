@@ -1,0 +1,25 @@
+/*
+priority_queue   --    #include<priority_queue>
+-----------------------------------------------
+Sorted queue
+Default is the greatest element at the top and pops out first
+
+template<
+    class T,
+    class Container = std::vector<T>,
+    class Compare = std::less<typename Container::value_type>
+> class priority_queue;
+
+The container must satisfy the requirements of SequenceContainer, and its iterators must satisfy the requirements of LegacyRandomAccessIterator. Additionally, it must provide the following functions with the usual semantics:
+front()
+push_back()
+pop_back().
+The standard containers std::vector (including std::vector<bool>) and std::deque satisfy these requirements.
+
+Constant time lookup for the largest element
+logarithmic time complexity for insertion and extraction
+
+
+Working with a priority_queue is similar to managing a heap in some random access container, with the benefit of not being able to accidentally invalidate the heap.
+
+*/

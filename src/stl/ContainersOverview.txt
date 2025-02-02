@@ -1,0 +1,72 @@
+// Containers - Overview
+The Containers library is a generic collection of class templates and algorithms 
+that allow programmers to easily implement common data structures like queues, lists and stacks. 
+
+Sequence Containers
+=====================
+Sequence containers implement data structures which can be accessed sequentially.
+
+1. array         std::array<T, size_t>        #include<array>
+
+2. vector        std::vector<T>               #include<vector>
+
+3. deque         std::deque<T>                #include<deque>
+
+4. forward_list  std::forward_list<T>         #include<forward_list>
+
+5. list          std::list<T>                 #include<list>
+
+6. string        std::string                  #include<string>
+
+
+Associative Containers
+-------------------------
+Associative containers implement sorted data structures that can be quickly searched
+(O(log n) complexity).
+
+Internal data structure is usually - Binary Tree
+  
+1. set<>     -unique keys,      No duplicates,         sorted in a specific order
+
+2. multiset - keys,             Duplicates allowed,    sorted by a specific order
+
+3. map      - key-value pairs,  No duplicates,         sorted by keys
+
+4. multimap - key-value pairs,  Duplicates allowed,    sorted by keys
+
+
+Unorderd associative Containers
+-------------------------------
+Unordered associative containers implement unsorted (hashed) data structures that can be quickly searched 
+(O(1) average, O(n) worst-case complexity).
+Preserve no order
+Internal data structure is usually - Hash Table
+
+1. unordered_set<>     - Unique Keys,     No duplicates                      Hashed by keys(No specific order)
+
+2. unorderd_map<>      - Key-value pairs, Keys are unique No duplicate keys, Hashed by keys(No specific order)
+
+3. unordered_multiset  - Keys,            Duplicated allowed,                Hashed by keys(No specific order)
+
+3. unordered_multimap  - Key-value pairs, Duplicates allowed,                Hashed by keys(No specific order)
+
+
+
+
+
+Container Adaptors:
+-------------------
+
+1. stack
+
+2. queue
+
+3. priority_queue
+
+4. flat_set
+
+5. flat_multiset
+
+6. flat_map
+
+7. flat_multimap

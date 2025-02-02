@@ -42,7 +42,7 @@ include_directories(lib/googletest/googletest/include, lib/googletest/googlemock
 
 #Sources and include directories
 file(GLOB_RECURSE LIST_SOURCES CONFIGUTRE_DEPENDS "src/*.cpp")
-file(GLOB_RECURSE LIST_HEADERS CONFIGUTRE_DEPENDS "include/*.h" "src/*.h" "src/*.hpp")
+file(GLOB_RECURSE LIST_HEADERS CONFIGUTRE_DEPENDS "include/*.h" "src/*.h" "src/*.hpp" "src/*/*.hpp" "src/*/*/*.hpp")
 set(LIST_INCUDE_DIRS "")
 foreach(_headerFile ${LIST_HEADERS})
     get_filename_component(_dir ${_headerFile} PATH)

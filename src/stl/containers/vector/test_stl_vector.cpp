@@ -70,3 +70,20 @@ TEST(STLVECTOR, vector_vector_pair2){
     }
     std::cout << std::endl;
 }
+//slice - subvector
+TEST(STLVECTOR, slice){
+    std::vector<int> v{1,2,3,4,5,6,7,8,9,10};
+    int startpos=2, endpos=6;
+    std::vector<int> v13(v.begin()+startpos, v.begin()+endpos);
+    EXPECT_THAT(v13, ::testing::ContainerEq(std::vector<int>{3,4,5,6}));
+}
+//split
+TEST(STLVECTOR, split) {
+    std::vector<int> v{-1, -2, -3, -4, -5, 0, 7, 8, 9, 10};
+    std::vector<int> negative{-1,-2,-3,-4,-5};
+    std::vector<int> positive{7,8,9,10};
+    auto pos = std::find(v.begin(), v.end(), 0);
+    int d = std::distance(v.begin(), pos);
+    EXPECT_THAT(negative, ::testing::ContainerEq(std::vector<int>(v.begin(), v.begin()+d)));
+    EXPECT_THAT(positive, ::testing::ContainerEq(std::vector<int>(pos+1, v.end())));
+}

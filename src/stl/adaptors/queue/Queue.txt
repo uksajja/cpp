@@ -1,0 +1,19 @@
+queue    --    #include<queue>
+-------------------------------
+FIFO(First In First Out)
+
+template<
+    class T,
+    class Container = std::deque<T>
+> class queue;
+
+Default base container is std::dequeue<T>
+
+
+The container to store the elements must satisfy the requirements of SequenceContainer. Additionally, it must provide the following functions with the usual semantics:
+back()
+front()
+push_back()
+pop_front()
+
+The standard containers std::deque and std::list satisfy these requirements.
