@@ -82,20 +82,6 @@
             }
         },
         {
-            "name": "vs-rel",
-            "displayName": "Visual Studio Community 2022 Release - amd64",
-            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
-            "generator": "Visual Studio 17 2022",
-            "toolset": "host=x64",
-            "architecture": "x64",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe"
-            }
-        },
-        {
             "name": "vs-rel-new",
             "displayName": "Visual Studio Community 2022 Release - amd64",
             "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
@@ -110,7 +96,7 @@
             }
         },
         {
-            "name": "clang",
+            "name": "clang-dbg-vs-llvm",
             "displayName": "Clang 12.0.0 (GNU CLI) for MSVC 17.0.32014.148 (Visual Studio Community 2022 Release - amd64)",
             "description": "Using compilers: C = C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe, CXX = C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
@@ -120,50 +106,70 @@
                 "CMAKE_CXX_COMPILER": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\Llvm\\x64\\bin\\clang.exe",
                 "CMAKE_BUILD_TYPE": "Debug"
             }
+        },
+        {
+            "name": "gcc-rel",
+            "displayName": "Configure preset using toolchain file",
+            "description": "Sets Ninja generator, build and install directory",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_TOOLCHAIN_FILE": "",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
+            }
         }
     ],
     "buildPresets": [
         {
-            "name": "vs-rel",
+            "name": "vs-rel-bld",
             "description": "",
-            "displayName": "vs-rel",
+            "displayName": "vs-rel-bld",
             "configurePreset": "vs-rel",
             "configuration": "Release"
         },
         {
-            "name": "vs-dbg",
+            "name": "vs-dbg-bld",
             "description": "",
-            "displayName": "vs-dbg",
+            "displayName": "vs-dbg-bld",
             "configurePreset": "vs-dbg",
             "configuration": "Debug"
         },
         {
-            "name": "gcc-rel",
-            "description": "",
-            "displayName": "",
+            "name": "gcc-rel-bld",
+            "description": "gcc-rel-bld",
+            "displayName": "gcc-rel-bld",
             "configurePreset": "gcc-rel",
             "configuration": "Release"
         },
         {
-            "name": "gcc-dbg",
+            "name": "gcc-dbg-bld",
             "description": "gcc-dbg",
-            "displayName": "gcc-dbg",
+            "displayName": "gcc-dbg-bld",
             "configurePreset": "gcc-dbg",
             "configuration": "Debug"
         },
         {
-            "name": "clang-gnu-dbg",
+            "name": "clang-gnu-dbg-bld",
             "description": "",
-            "displayName": "clang-gnu-dbg",
+            "displayName": "clang-gnu-dbg-bld",
             "configurePreset": "clang-gnu-dbg",
             "configuration": "Debug"
         },
         {
-            "name": "clang-cl-dbg",
+            "name": "clang-cl-dbg-bld",
             "description": "",
-            "displayName": "clang-cl-dbg",
+            "displayName": "clang-cl-dbg-bld",
             "configurePreset": "clang-cl-dbg",
             "configuration": "Debug"
+        },
+        {
+            "name": "gcc-build",
+            "description": "",
+            "displayName": "",
+            "inherits": [
+                "gcc-rel-bld"
+            ]
         }
     ]
 }

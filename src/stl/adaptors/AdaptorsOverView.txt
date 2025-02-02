@@ -1,0 +1,44 @@
+// Adaptors
+/*
+stack           --> LIFO (Last In First Out)
+queue           --> FIFO(First In First Out)
+priority_queue  --> Sorted queue(greatest element at the top and pops out first)
+
+Iterators are NOT avialable for container adaptors. 
+Hence traversal without emptying container is not possible.
+
+
+
+
+queue    --    #include<queue>
+-------------------------------
+FIFO(First In First Out)
+
+template<
+    class T,
+    class Container = std::deque<T>
+> class queue;
+
+
+
+
+priority_queue   --    #include<priority_queue>
+-----------------------------------------------
+Sorted queue(greatest element at the top and pops out first)
+
+template<
+    class T,
+    class Container = std::vector<T>,
+    class Compare = std::less<typename Container::value_type>
+> class priority_queue;
+
+
+Constant time lookup for the largest element
+logarithmic time complexity for insertion and extraction
+
+
+
+
+
+
+
