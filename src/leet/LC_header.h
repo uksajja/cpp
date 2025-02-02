@@ -1,0 +1,20 @@
+#pragma once 
+
+void test_leet_prob1();
+void test_leet_prob2();
+void test_leet_prob3();
+void test_leet_prob4();
+void test_leet_prob5();
+void test_leet_prob6();
+void test_leet_prob7();
+void test_leet_prob8();
+void test_leet_prob9();
+void test_leet_prob10();
+void test_leet_prob11();
+void test_leet_prob12();
+void test_leet_prob13();
+void test_leet_prob14();
+void test_leet_prob15();
+void test_leet_prob16();
+void test_leet_prob18();
+void test_leet_prob19();
