@@ -1,0 +1,60 @@
+/*
+
+#include<array>
+
+template<
+    class T,
+    std::size_t N
+> struct array;
+
+example:  std::array<int, 5>
+
+About:
+-------------------------
+
+    . Fixed size or Static size
+    . Contiguous memory
+    . Stack allocated, fast 
+    . Allocation size is limited, huge allocations may not be possible
+    . Reordering, resizing is costly
+    
+    Time Complexity
+    ---------------------
+    . Random Access O(1)
+    . Insertion - O(n)
+    . Deletion - O(n)
+    . Update - O(1)
+
+
+    Element Access Methods:
+    -----------------
+    at()
+    operator[]
+    front()
+    back()
+
+    Capacity Methods:
+    --------------------
+    size()
+    max_size()
+    empty()
+
+    Operations
+    ---------------------
+    fill()
+    swap()
+    data()
+
+    Iterators
+    --------------------
+    begin(),  end()
+    cbegin(), cend()
+    rbegin(), rend()
+
+    Non-member Functions
+    --------------------
+    get<index>(arrayname)
+    std::swap
+    to_array()
+
+*/
