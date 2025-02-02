@@ -1,5 +1,7 @@
+#include <cmath>
 #include<gtest/gtest.h>
 #include<ode.h>
+
 
 double test_function_ode(double t, double x){
     return((1-exp(t))*x / (1+exp(t)));

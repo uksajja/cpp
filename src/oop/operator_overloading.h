@@ -14,7 +14,7 @@ class PosVector {
             return PosVector(m_X + other.m_X,  m_Y + other.m_Y, m_Z + other.m_Z);
         }
         PosVector operator-(const PosVector& other) const {
-           return PosVector(m_X - other.m_X,  m_Y - other.m_Y, m_Z - other.m_Z);
+            return PosVector(m_X - other.m_X,  m_Y - other.m_Y, m_Z - other.m_Z);
         }
         PosVector operator*(const PosVector& other) const {
            return PosVector(m_X * other.m_X,  m_Y * other.m_Y, m_Z * other.m_Z);
@@ -25,10 +25,16 @@ class PosVector {
         bool operator==(const PosVector& other) const {
             return (m_X == other.m_X && m_Y == other.m_Y && m_Z == other.m_Z);
         }
-
-       /*PosVector operator=(const PosVector& other) {
-            return (PosVector(other.m_X, other.m_Y, other.m_Z));
-        }*/ // This is wrong - WHY?
+        //Assignment operator
+        //Usage: Object is already constructed elsewhere. Just the contents are copied with the use of assignement operator
+        PosVector& operator=(const PosVector& other) {
+            if(this != &other){
+                m_X = other.m_X;
+                m_Y = other.m_Y;
+                m_Z = other.m_Z;
+            }
+            return *this;           
+        } //return (PosVector(other.m_X, other.m_Y, other.m_Z)); This is wrong here - WHY? object should not be constructed.
 };
 std::ostream& operator<<(std::ostream& stream, const PosVector& A);
 

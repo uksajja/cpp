@@ -1,8 +1,8 @@
 
 #pragma once
 
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
 class Employee {
     private:       
@@ -15,7 +15,7 @@ class Employee {
         Employee(int Id) : m_Name("Unknown"), m_ID(Id), m_Salary(-1.0) {}
         
         Employee(const std::string& name, int Id ) : m_Name(name), m_ID(Id), m_Salary(-1.0) {}
-           
+
         Employee(const std::string& name, int Id, double salary)  : m_Name(name), m_ID(Id), m_Salary(salary) {}
             
         void setID(int id) {
