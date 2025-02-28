@@ -1,4 +1,7 @@
-Read the books : 
+Books :
+
+Following books are recomended for reading:
+
 STL
 ------------------
 
@@ -8,10 +11,13 @@ STL
 
 2. Effective Modern C++ (C++11 and C++14) - Scott Meyers O'Reilly
 
+
 OOPS
 ------------------
 
 1. CPlusPlusNotesForProfessionals.pdf - Goalkicker.com
+
+
 
 DSA
 ------------------
